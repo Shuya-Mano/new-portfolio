@@ -1,0 +1,36 @@
+$breakpoints: (
+  "sp": "screen and (max-width:599px )",
+  "tab": "screen and (max-width:1024px )",
+  "pc": "screen and (min-width: 1025px)",
+
+  "tab-sp": "screen and (max-width: 830px)",
+);
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #333;
+  background-color: #213646;
+  position: relative;
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+// .fix{
+//   overflow: hidden;
+//   height: 100vh;
+//   width: 100%;
+// }
+
+// color
+$theme-color: #35599D;
+$main-color: #359D9C;
+$accent-color: #73C16D;
+$color: #D9C475;
