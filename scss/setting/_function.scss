@@ -1,117 +1,65 @@
 body {
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  // overflow: hidden;
   position: relative;
+  font-family: 'GFS Didot','Noto Sans JP', sans-serif;
 }
 
-// .bgc-light {
-//   display: block;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   object-fit: cover;
-//   width: 100%;
-//   height: 100%;
-
-//   mask-image: radial-gradient(
-//     white 0%,
-//     white 30%,
-//     transparent 80%,
-//     transparent
-//   );
-// }
-
-
-.circle-container {
-  $particleNum: 200;
-  $particleColor: hsl(180, 100%, 80%);
-
-  position: absolute;
-  transform: translateY(-10vh);
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-
-  .circle {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    mix-blend-mode: screen;
-    background-image: radial-gradient(
-      hsl(180, 100%, 80%),
-      hsl(180, 100%, 80%) 10%,
-      hsla(180, 100%, 80%, 0) 56%
-    );
-
-    animation: fadein-frames 200ms infinite, scale-frames 2s infinite;
-
-    @keyframes fade-frames {
-      0% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.7;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes scale-frames {
-      0% {
-        transform: scale3d(0.4, 0.4, 1);
-      }
-
-      50% {
-        transform: scale3d(2.2, 2.2, 1);
-      }
-
-      100% {
-        transform: scale3d(0.4, 0.4, 1);
-      }
-    }
+@keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0;
   }
 
-  $particleBaseSize: 8;
+  1% {
+    display: block;
+    opacity: 0;
+  }
 
-  
-  @for $i from 1 through $particleNum {
-    &:nth-child(#{$i}) {
-      $circleSize: random($particleBaseSize);
-      width: $circleSize + px;
-      height: $circleSize + px;
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
 
-      $startPositionY: random(10) + 100;
-      $framesName: "move-frames-" + $i;
-      $moveDuration: 28000 + random(9000) + ms;
+@keyframes wipeIn {
+  0%{
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
 
-      animation-name: #{$framesName};
-      animation-duration: $moveDuration;
-      animation-delay: random(37000) + ms;
+  100%{
+      text-shadow: 0 0 0 rgba(255,255,255,1);
+  }
+}
 
-      @keyframes #{$framesName} {
-        from {
-          transform: translate3d(
-            #{random(100) + vw},
-            #{$startPositionY + vh},
-            0
-          );
-        }
+@keyframes bgc-wipe{
+  0%{
+    width: 0%;
+    transform: translateX(0);
+  }
 
-        to {
-          transform: translate3d(
-            #{random(100) + vw},
-            #{- $startPositionY - random(30) + vh},
-            0
-          );
-        }
-      }
+  50%{
+    width: 100%;
+    transform: translateX(0);
+  }
 
-      .circle {
-        animation-delay: random(4000) + ms;
-      }
-    }
+  100%{
+    width: 100%;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes text-opacity{
+  0%{
+    opacity: 0;
+  }
+
+  40%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
   }
 }

@@ -1,3 +1,67 @@
-.fv{
-  height: 100vh;
+.fv {
+  height: calc(100vh - 40);
+  width: 100%;
+
+  &-inner {
+    margin-top: 60px;
+    position: relative;
+
+    &::after{
+      content: "";
+      position: absolute;
+      display: block;
+      height: 3px;
+      width: 60px;
+      bottom: 24%;
+      left: 8%;
+      background-color: $font-color;
+    }
+  }
+
+  &__title {
+    color: $font-color;
+    font-size: unquote('min(8vw,6rem)');
+    position: absolute;
+    top: 15%;
+    left: 8%;
+    z-index: 1;
+    // mix-blend-mode: difference;
+  }
+
+  &__texts {
+    color: $font-color;
+    line-height: 60px;
+    font-size: 2.4rem;
+    position: absolute;
+    bottom: 30%;
+    left: 8%;
+    z-index: 1;
+    // mix-blend-mode: difference;
+
+  }
+
+  &__img{
+    text-align: right;
+    position: relative;
+
+    &::after{
+      content: "";
+      position: absolute;
+      display: block;
+      // background-color: rgba(0,0,0, .8);
+      top: 0;
+      right: 0;
+      width: 75vw;
+      height: 600px;
+      margin-right: auto;
+    }
+  }
+
+  &__photo {
+    width: 75vw;
+    height: 600px;
+    filter: brightness(.8)grayscale(.3);
+    object-fit: cover;
+    object-position: bottom right;
+  }
 }

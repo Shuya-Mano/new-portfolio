@@ -1,0 +1,13 @@
+.footer{
+  text-align: center;
+  color: white;
+  font-size: 1.0rem;
+
+  @include mq(tab){
+    margin: 40px 0 40px;
+  }
+
+  &__copy{
+    margin: 40px 0 20px;
+  }
+}

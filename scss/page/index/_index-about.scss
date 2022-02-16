@@ -1,0 +1,193 @@
+.about{
+  margin-top: 60px;
+
+  &-inner{
+    max-width: 1024px;
+    margin: 0 auto;
+
+    @include mq(tab){
+      width: 90%;
+    }
+  }
+
+  &__catch{
+    color: $font-color;
+    position: relative;
+
+    &::after{
+      content: "";
+      position: absolute;
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: $font-color;
+      bottom: 13px;
+      left: 111px;
+    }
+
+    &-title{
+      font-size: 6rem;
+    }
+
+    &-sub{
+      font-size: 2.4rem;
+      margin-top: 32px;
+    }
+  }
+
+  &__wrapper{
+    display: none;
+    // opacity: 0;
+
+    &.action{
+      display: block;
+      opacity: 1;
+      animation: fadeIn 0.5s ease-in 0s forwards;
+    }
+  }
+
+  &__wrap{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    align-items: center;
+
+    @include mq(sp){
+      flex-direction: column;
+    }
+  }
+
+  &__texts{
+    color: $font-color;
+    font-size: 1.6rem;
+    line-height: 2;
+    width: 50%;
+    margin-left: 32px;
+    text-align: justify;
+    letter-spacing: 1px;
+    padding:  16px 16px 0 16px;
+
+    @include mq(tab){
+      font-size: clamp(1.2rem,2vw,1.6rem);
+    }
+
+    @include mq(sp){
+      width: 90%;
+      margin-left: 0;
+      margin-top: 40px;
+    }
+  }
+
+  &__text{
+    &:first-child{
+      &:first-letter{
+        font-size: 2.4rem;
+      }
+    }
+    margin-top: 12px;
+  }
+
+  &__img{
+    height: 320px;
+    width: 400px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+
+    &::after{
+      content: "";
+      position: absolute;
+      display: block;
+      height: 320px;
+      width: 400px;
+      border: 2px solid $font-color;
+      top: 16px;
+      left: 16px;
+      z-index: 1;
+
+      @include mq(tab){
+        height: 50vh;
+        width: 40vw;
+      }
+
+      @include mq(sp){
+        height: 30vh;
+        width: 80vw;
+      }
+    }
+
+    @include mq(tab){
+      height: 50vh;
+      width: 40vw;
+    }
+
+    @include mq(sp){
+      height: 30vh;
+      width: 80vw;
+    }
+  }
+
+  &__photo{
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    object-fit: cover;
+  }
+
+  &__btn{
+    margin-top: 32px;
+    position: relative;
+
+    &::before,&::after{
+      content: "";
+      position: absolute;
+      display: block;
+      background-color: $font-color;
+    }
+
+    &::before{
+      height: 2px;
+      width: 40px;
+      top: 14px;
+      left: 100px;
+    }
+
+    &::after{
+      height: 2px;
+      width: 16px;
+      top: 8px;
+      left: 126px;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__span{
+    display: inline-block;
+    padding-bottom: 4px;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      left: 0;
+      bottom: 0;
+      background-color: $font-color;
+      position: absolute;
+      transition: .5s all;
+      width: 0;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+}
+
+#vegas{
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
