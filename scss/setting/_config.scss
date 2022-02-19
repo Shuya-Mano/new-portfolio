@@ -19,7 +19,7 @@ $font-color: #e7eeef;
 
 html {
   font-size: 62.5%;
-  height: -webkit-fill-available;
+  // height: -webkit-fill-available;
 }
 
 body {
@@ -27,214 +27,19 @@ body {
   background-color: $theme-color;
   position: relative;
   font-family: "Sawarabi Gothic", sans-serif;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  // min-height: 100vh;
+  // min-height: -webkit-fill-available;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 body.hidden {
   overflow: hidden;
 }
-
-.modal {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  z-index: 99999999;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: $theme-color;
-
-  &__texts {
-    color: $font-color;
-    font-size: 1.6rem;
-    z-index: 1;
-    position: relative;
-    margin-top: 32px;
-    margin-left: 24px;
-    letter-spacing: 1px;
-    line-height: 2.5;
-    width: 80%;
-  }
-
-  &__text {
-    position: relative;
-    &:first-child {
-      font-size: 3.2rem;
-    }
-
-    @include mq(sp){
-          &:not(first-child){
-            font-size: clamp(1.4rem , 2vw ,1.6rem);
-          }
-    }
-
-    &:nth-child(2){
-      margin-top: 15vh;
-    }
-  }
-
-  &__photo {
-    width: 40vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    right: 0;
-    object-fit: cover;
-    filter: brightness(0.5) grayscale(0.5);
-
-    @include mq(sp){
-      width: 60vw;
-    }
-  }
-
-  &__buttons {
-    display: flex;
-    margin-top: 60px;
-    margin-left: 24px;
-    color: $font-color;
-    font-size: 1.6rem;
-  }
-
-  &__button {
-    position: relative;
-    display: inline-block;
-    padding: 12px 16px;
-    border: 2px solid $font-color;
-    color: $font-color;
-    text-align: center;
-    text-decoration: none;
-    transition: 0.3s;
-
-    &:first-child{
-      color: $font-color;
-      border: 2px solid rgba(244, 245, 167, 0.5);
-
-      &:before{
-      background: rgba(244, 245, 167, 0.5);
-      color: $font-color;
-      }
-    }
-    &:hover {
-      color: #333;
-    }
-    &::before {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      content: "";
-      background: $font-color;
-      transform-origin: right top;
-      transform: scale(0, 1);
-      transition: transform 0.3s;
-    }
-    &:hover::before {
-      transform-origin: left top;
-      transform: scale(1, 1);
-    }
-  }
-}
-
-
-.topContact_snow {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  transform: rotate(180deg);
-  // z-index: 1;
-  color: rgba(244, 245, 167, 0.8);
-}
-
-.loading {
-  height: 100vh;
-  width: 100vw;
-  background-color: $theme-color;
-  position: fixed;
-  z-index: 99999;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  &__texts {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-  }
-
-  &__wipe {
-    &::before {
-      content: "";
-      position: absolute;
-      display: block;
-      height: 40px;
-      width: 0;
-      background-color: #e7eeef;
-      transition: 1s;
-      margin-top: 30px;
-    }
-
-    &.active {
-      &::before {
-        animation: bgc-wipe 2s forwards;
-      }
-    }
-  }
-
-  &__text {
-    z-index: 100000;
-    color: $font-color;
-    font-size: 2.4rem;
-    margin-top: 32px;
-    opacity: 0;
-
-    &.active {
-      animation: text-opacity 2s forwards;
-    }
-
-    @include mq(tab) {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-    }
-
-    @include mq(sp) {
-      font-size: 1.6rem;
-    }
-  }
-}
-
-.volume{
-  position: fixed;
-  height: 50px;
-  width: 50px;
-  bottom: 50px;
-  right: 50px;
-  background-color: #e7eeef;
-  border-radius: 100%;
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &-on , &-off{
-    height: 40px;
-    width: 40px;
-  }
-
-  &-off{
-    display: none;
-  }
-}
-
-// .fix{
-//   overflow: hidden;
-//   height: 100vh;
-//   width: 100%;
-// }

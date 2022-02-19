@@ -55,11 +55,13 @@
       font-size: 1.6rem;
       padding: 10px;
 
-      &:not(first-child) {
+      @include mq(sp){
+        font-size: 2.4rem;
+      }
+      &:not(:first-child) {
         margin-right: 32px;
 
         @include mq(sp){
-          font-size: 2.4rem;
           margin-right: 0;
           margin-top: 64px;
         }

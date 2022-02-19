@@ -2,16 +2,11 @@
 
 var $audio1 = $("#new-portfolio").get(0);
 $(function () {
-  $(".loading , .loading__texts").ready(function () {
-    var id = setTimeout(function () {
-      clearTimeout(id);
-    });
-  });
 
   $("#bgm-on").click(function () {
+    $audio1.play();
     $(".modal").fadeOut();
     $(".loading").show();
-    $audio1.play();
 
     $(".loading__texts")
       .find(".loading__wipe")

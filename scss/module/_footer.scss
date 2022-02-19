@@ -2,12 +2,14 @@
   text-align: center;
   color: white;
   font-size: 1.0rem;
+  padding: 20px;
+  margin-top: 40px;
 
-  @include mq(tab){
-    margin: 40px 0 40px;
-  }
+  // @include mq(tab){
+  //   margin: 40px 0 40px;
+  // }
 
-  &__copy{
-    margin: 40px 0 20px;
-  }
+  // &__copy{
+  //   margin: 40px 0 20px;
+  // }
 }
